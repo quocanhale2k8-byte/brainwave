@@ -47,6 +47,7 @@ button {
 }
 
 .logo {
+    flex-shrink: 0;
     font-family: Rubik, Arial, sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -54,6 +55,7 @@ button {
 }
 
 .button {
+    max-width: 100%;
     display: inline-block;
     padding: 13px 32px 14px;
     border-radius: 8px;
@@ -62,7 +64,7 @@ button {
     font-size: 17px;
     font-weight: 700;
     line-height: 32px;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .label {
@@ -103,7 +105,10 @@ h3 {
 }
 
 .menu {
+    flex-shrink: 1;
+    min-width: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 35px;
     margin-left: 48px;
     font-size: 15px;
@@ -112,6 +117,7 @@ h3 {
 }
 
 .header-button {
+    flex-shrink: 0;
     margin-left: auto;
     padding: 9px 26px;
 }
@@ -125,6 +131,8 @@ h3 {
 }
 
 .hero-text {
+    flex-shrink: 1;
+    min-width: 0;
     width: 49%;
     padding-top: 58px;
 }
@@ -148,6 +156,8 @@ h3 {
 }
 
 .hero-image {
+    flex-shrink: 1;
+    min-width: 0;
     width: 42%;
     max-width: 463px;
 }
@@ -177,7 +187,9 @@ h3 {
 }
 
 .service-card {
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 350px;
     min-width: 0;
     min-height: 485px;
     padding: 49px 25px 38px;
@@ -267,6 +279,7 @@ h3 {
 }
 
 .review-photo {
+    flex-shrink: 0;
     width: 164px;
     height: 164px;
     margin-top: 9px;
@@ -275,7 +288,9 @@ h3 {
 }
 
 .review-content {
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
     min-width: 0;
 }
 
@@ -294,6 +309,7 @@ h3 {
 
 .review-author {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
     margin-top: 15px;
@@ -327,12 +343,16 @@ h3 {
 }
 
 .story-main-photo {
+    flex-shrink: 1;
+    min-width: 0;
     width: 40%;
     margin-top: 67px;
     border-radius: 10px;
 }
 
 .story-right {
+    flex-shrink: 1;
+    min-width: 0;
     width: 51%;
 }
 
@@ -343,6 +363,8 @@ h3 {
 }
 
 .story-woman {
+    flex-shrink: 1;
+    min-width: 0;
     position: relative;
     width: 56%;
 }
@@ -360,6 +382,8 @@ h3 {
 }
 
 .story-small-photo {
+    flex-shrink: 1;
+    min-width: 0;
     width: 28%;
     height: 167px;
     margin-top: 113px;
@@ -382,7 +406,10 @@ h3 {
 }
 
 .fact {
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 314px;
+    min-width: 0;
 }
 
 .fact strong {
@@ -428,13 +455,17 @@ h3 {
 }
 
 .feature > img {
+    flex-shrink: 0;
     width: 79px;
     height: 79px;
     margin-top: 6px;
 }
 
 .feature > div {
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
 }
 
 .feature h3 {
@@ -456,7 +487,15 @@ h3 {
     border-top: 1px solid #e7e9ed;
 }
 
+.project-banner > .button {
+    flex-shrink: 0;
+}
+
 .project-banner > div {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 589px;
+    min-width: 0;
     max-width: 589px;
 }
 
@@ -487,7 +526,9 @@ h3 {
 }
 
 .work-column {
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
     min-width: 0;
 }
 
@@ -582,6 +623,8 @@ h3 {
 }
 
 .footer-brand {
+    flex-shrink: 1;
+    min-width: 0;
     width: 274px;
     margin-right: 60px;
 }
@@ -613,7 +656,7 @@ h3 {
 
 .footer-column ul {
     list-style: none;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .footer-column li {
@@ -740,5 +783,134 @@ h3 {
 
     .footer-brand > img {
         margin-top: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        column-gap: 15px;
+        row-gap: 20px;
+    }
+
+    .menu {
+        margin-left: auto;
+    }
+
+    .header-button {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .header,
+    .hero-content,
+    .service-list,
+    .customer-review,
+    .story-content,
+    .facts,
+    .project-banner,
+    .work-list {
+        flex-wrap: wrap;
+    }
+
+    .service-card {
+        flex-basis: 260px;
+    }
+
+    .fact {
+        flex-basis: 240px;
+    }
+
+    .hero {
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .hero-image {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .customer-review {
+        gap: 30px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .review-author {
+        gap: 5px 20px;
+    }
+
+    .story-heading {
+        width: 100%;
+    }
+
+    .story-content {
+        gap: 50px;
+    }
+
+    .story-main-photo {
+        width: 100%;
+        max-width: 445px;
+        margin-top: 0;
+    }
+
+    .story-right {
+        width: 100%;
+    }
+
+    .story-small-photo {
+        height: auto;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-pattern {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header,
+    .container {
+        width: 90%;
+    }
+
+    .menu {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .service-list {
+        margin-top: 50px;
+    }
+
+    .work-caption {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .footer-brand {
+        margin-right: 0;
     }
 }
